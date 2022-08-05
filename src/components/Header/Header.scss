@@ -1,0 +1,39 @@
+@import '../../assets/style/style';
+
+header {
+    .navbar{
+        background-color: $background-navbar-primary;
+    }
+
+    .nav-img{
+        width: 100px;
+        height: 100px;
+        margin-left: 20px;
+        display: inline-block;
+    }
+
+    .nav-link-text{
+        color: $background-navbar-secondary;
+        font-size: 16px;
+        text-decoration: none;
+        list-style-type: none;
+        
+    }
+
+    .nav-link-text:hover {
+        text-decoration: none;
+        font-size: 18px;
+        color: pink;
+    }
+
+    .btn-search {
+        color: $btn-primary;
+        border: 1px solid $btn-primary;
+    }
+
+    .btn-search:hover {
+        background-color: $btn-primary;
+        color: $background-navbar-primary;
+        border: 1px solid $btn-primary;
+    }
+}

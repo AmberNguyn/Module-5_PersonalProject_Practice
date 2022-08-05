@@ -1,24 +1,33 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
+import Header from './components/Header/Header';
+import Underconstruction from "./views/Underconstruction/Underconstruction";
+import Footer from "./components/Footer/Footer";
+import Homepage from "./views/Homepage/Homepage";
+import Teacher from "./views/Teacher/Teacher";
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+    <BrowserRouter>
+    <Header></Header>
+      <Routes>
+        <Route exact path={'viewTeachers'} element={<Teacher />} />
+        <Route exact path={'viewTeachers/find-by-teacher-type/:input'} element={<Teacher />} />
+        <Route exact path={'viewContracts'} element={<Underconstruction />} />
+        <Route exact path={'viewSalary'} element={<Underconstruction />} />
+        <Route exact path={'viewSalary'} element={<Underconstruction />} />
+        <Route exact path={'/'} element={<Homepage />} />
+
+      </Routes>
+      <Footer></Footer>
+    </BrowserRouter>
+    </>
+    
   );
 }
 

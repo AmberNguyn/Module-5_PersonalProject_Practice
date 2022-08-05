@@ -1,0 +1,27 @@
+@import '../../assets/style/style';
+
+footer {
+    .footer-bg {
+        background-color: $background-navbar-primary;
+    }
+
+    .footer-text{
+        font-size: 16px;
+        color: $background-navbar-secondary;
+
+    }
+
+    .footer-text:hover {
+        text-decoration: none;
+        color: $btn-primary;
+
+        
+    }
+
+    .footer-img{
+        width: 100px;
+        height: 100px;
+        margin-left: 20px;
+        display: inline-block;
+    }
+}
