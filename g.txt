@@ -1,0 +1,10 @@
+state = initial state
+action = what you do to the state (like increment the state)
+reducer = do what action tells it to do (state+1)
+slide = state + actions + reducer
+
+redux toolkit = you introduce state+action+reducer all in one place (that is slide/createSlice)
+
+name -> easier to distinguish between store
+
+you do everything (state, action, reducer) in slice -> after you finish, make sure you add the reducer to store 

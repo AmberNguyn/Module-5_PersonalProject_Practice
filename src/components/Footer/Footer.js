@@ -11,9 +11,9 @@ export default function Footer() {
           <img src={schoolLogo} alt="school-logo" className="footer-img"/>
         </div>
 
-        <div className="footer-text col-6 d-flex flex-column align-items-center">
-          <p>Teacher Payment System</p>
-          <p>
+        <div className="col-6 d-flex flex-column align-items-center">
+          <p className="footer-text-slogan">Teacher Payment System</p>
+          <p className="footer-text-slogan">
             Automate payment operations so you can focus on teacher
             relationships and growing values.
           </p>

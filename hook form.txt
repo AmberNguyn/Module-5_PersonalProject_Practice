@@ -1,0 +1,30 @@
+import React from 'react';
+import { useForm } from 'react-hook-form';
+
+export default function App() {
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+  console.log(errors);
+  
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input type="text" placeholder="Contract ID" {...register("Contract ID", {, maxLength: 80})} />
+      <input type="datetime-local" placeholder="Start date" {...register("Start date", {required: true, maxLength: 100})} />
+      <input type="datetime-local" placeholder="End date" {...register("End date", {, pattern: /^\S+@\S+$/i})} />
+      <input type="number" placeholder="Pay rate" {...register("Pay rate", {, maxLength: 12})} />
+      <input type="text" placeholder="Bank" {...register("Bank", {})} />
+      <input type="text" placeholder="Account name" {...register("Account name", {})} />
+      <input type="number" placeholder="Account number" {...register("Account number", {})} />
+      <select {...register("Branch")}>
+        <option value="Vietcombank">Vietcombank</option>
+      </select>
+      <input type="text" placeholder="Description" {...register("Description", {})} />
+
+      <input {...register("Sign yet?")} type="radio" value="true" />
+      <input {...register("Sign yet?")} type="radio" value="false" />
+      <input type="text" placeholder="Teacher Code" {...register("Teacher Code", {})} />
+
+      <input type="submit" />
+    </form>
+  );
+}
