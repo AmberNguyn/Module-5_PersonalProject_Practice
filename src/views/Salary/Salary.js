@@ -1,32 +1,28 @@
-import Alert from 'react-bootstrap/Alert';
+import React from 'react'
+import { useSelector } from 'react-redux/es/exports'
+import { useDispatch } from 'react-redux/es/exports'
+import assignmentDetailService from '../../services/assignmentDetail.service'
 
-function Salary() {
+export default function Salary() {
+  const { assignmentDetails } = useSelector((state) => state.assignmentDetail);
+  const dispatch = useDispatch();
+
+  const getData = () => {
+    assignmentDetailService.getAll()
+    .then ((response) => {
+      console.log(response.data);
+      
+    })
+  }
+
+
   return (
-    <>
-      {[
-        'primary',
-        'secondary',
-        'success',
-        'danger',
-        'warning',
-        'info',
-        'light',
-        'dark',
-      ].map((variant) => (
-        <Alert key={variant} variant={variant}>
-          This is a {variant} alert—check it out!
-        </Alert>
-      ))}
-
-
-<Alert key='success' variant='success'>
-        Added successfully!
-      </Alert>
+    <div>
+      <button onClick={getData}>get data</button>
 
 
 
-    </>
-  );
+
+    </div>
+  )
 }
-
-export default Salary;
